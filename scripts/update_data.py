@@ -17,20 +17,41 @@ SERIES = {
     'BAMLH0A0HYM2': ('hy', 100.0), 'UNRATE': ('unemployment', 1.0),
 }
 def read_fred(series):
-    url = f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={series}'
-    req = urllib.request.Request(url, headers={'User-Agent':'MacroScenarioRadar/1.0 public-financial-data-research'})
-    with urllib.request.urlopen(req, timeout=25) as response:
-        body = response.read().decode('utf-8-sig')
-    items=[]
-    for row in csv.DictReader(io.StringIO(body)):
-        date=row.get('observation_date') or row.get('DATE')
-        raw=row.get(series)
-        if not date or raw is None or raw.strip() in ('', '.'):
+    """Read FRED observations through its authenticated official JSON API."""
+    from urllib.parse import urlencode
+    key = os.environ.get('FRED_API_KEY', '').strip()
+    if not key:
+        raise RuntimeError('FRED_API_KEY missing in GitHub Actions Secrets')
+    query = urlencode({
+        'series_id': series,
+        'api_key': key,
+        'file_type': 'json',
+        'observation_start': '2024-01-01',
+        'sort_order': 'asc'
+    })
+    request = urllib.request.Request(
+        'https://api.stlouisfed.org/fred/series/observations?' + query,
+        headers={'User-Agent': 'MacroScenarioRadar/2.1', 'Accept': 'application/json'}
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=12) as response:
+            payload = json.load(response)
+    except Exception as exc:
+        # The requested URL contains a private API key. Never log it.
+        raise RuntimeError(f'Official FRED API error for {series}: {type(exc).__name__}') from None
+    items = []
+    for row in payload.get('observations', []):
+        date, raw = row.get('date'), str(row.get('value', '')).strip()
+        if not date or raw in ('', '.', 'None'):
             continue
-        try: v=float(raw)
-        except ValueError: continue
-        if math.isfinite(v): items.append((date, v))
-    if not items: raise ValueError(f'No valid observations for {series}')
+        try:
+            value = float(raw)
+        except ValueError:
+            continue
+        if math.isfinite(value):
+            items.append((date, value))
+    if not items:
+        raise ValueError(f'No valid FRED observations for {series}')
     return items
 
 def update(key, date, value, series, multiplier=1.0):
@@ -96,6 +117,8 @@ def regime_weights():
     for i in sorted(range(6), key=lambda k: probs[k]-floored[k], reverse=True)[:rem]: floored[i]+=0.1
     return [round(x,1) for x in floored]
 
+if not os.environ.get('FRED_API_KEY', '').strip():
+    raise SystemExit('FRED_API_KEY not configured. Add the repository secret in Settings > Secrets and variables > Actions.')
 errors=[]; successes=0
 for series, (key, mult) in SERIES.items():
     try:

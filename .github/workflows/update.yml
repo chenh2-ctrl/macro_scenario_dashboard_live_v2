@@ -35,11 +35,9 @@ jobs:
           python-version: '3.12'
       - name: Refresh public macro data
         id: refresh
-        continue-on-error: true
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python scripts/update_data.py
-      - name: Warn if feed unavailable
-        if: steps.refresh.outcome == 'failure'
-        run: echo '::warning::Macro data refresh failed. Deploying last available snapshot; check the FRED feed and Actions logs.'
       - name: Save changed observations and history to repository
         run: |
           git config user.name 'macro-radar-bot'
