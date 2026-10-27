@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-10-27T10:35:00Z",
+  "mode": "initial_research_snapshot",
+  "notes": "Initial researched snapshot for 2026-10-27. Update from FRED to replace market indicators. Monthly qualitative indicators require release checks.",
+  "metrics": {
+    "brent": {"value":116.24,"asof":"2026-10-27","source":"Reuters market report","url":"https://www.eia.gov/outlooks/steo/","frequency":"daily","unit":"USD/bbl"},
+    "dgs2": {"value":4.68,"asof":"2026-10-26","source":"US Treasury / FRED DGS2","url":"https://fred.stlouisfed.org/series/DGS2","frequency":"daily","unit":"%"},
+    "dgs10": {"value":5.00,"asof":"2026-10-26","source":"US Treasury / FRED DGS10","url":"https://fred.stlouisfed.org/series/DGS10","frequency":"daily","unit":"%"},
+    "dgs30": {"value":5.31,"asof":"2026-10-26","source":"US Treasury / FRED DGS30","url":"https://fred.stlouisfed.org/series/DGS30","frequency":"daily","unit":"%"},
+    "tips10": {"value":2.66,"asof":"2026-10-26","source":"FRED DFII10","url":"https://fred.stlouisfed.org/series/DFII10","frequency":"daily","unit":"%"},
+    "breakeven10": {"value":2.34,"asof":"2026-10-26","source":"FRED T10YIE","url":"https://fred.stlouisfed.org/series/T10YIE","frequency":"daily","unit":"%"},
+    "hy": {"value":338,"asof":"2026-10-23","source":"ICE BofA / FRED BAMLH0A0HYM2","url":"https://fred.stlouisfed.org/series/BAMLH0A0HYM2","frequency":"daily","unit":"bp"},
+    "corepce": {"value":3.0,"asof":"2026-08-01","source":"BEA Core PCE YoY, via FRED PCEPILFE","url":"https://fred.stlouisfed.org/series/PCEPILFE","frequency":"monthly","unit":"% YoY"},
+    "corepce3m": {"value":null,"asof":null,"source":"Derived from latest FRED PCEPILFE (3m annualized)","url":"https://fred.stlouisfed.org/series/PCEPILFE","frequency":"monthly","unit":"% 3m saar"},
+    "ismnew": {"value":55.3,"asof":"2026-09-01","source":"ISM September 2026 manufacturing report","url":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/september/","frequency":"monthly","unit":"index"},
+    "ismprices": {"value":77.9,"asof":"2026-09-01","source":"ISM September 2026 manufacturing report","url":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/september/","frequency":"monthly","unit":"index"},
+    "unemployment": {"value":4.2,"asof":"2026-09-01","source":"BLS / FRED UNRATE","url":"https://fred.stlouisfed.org/series/UNRATE","frequency":"monthly","unit":"%"},
+    "productivity": {"value":2.2,"asof":"2026-04-01","source":"BLS second quarter 2026 labor productivity YoY","url":"https://www.bls.gov/productivity/","frequency":"quarterly","unit":"% YoY"},
+    "capexgrowth": {"value":null,"asof":null,"source":"Analyst / corporate guidance manual input","url":"","frequency":"quarterly","unit":"% YoY"},
+    "capexcuts": {"value":0,"asof":"2026-10-27","source":"Research judgment; number of hyperscalers confirming material forward CAPEX cuts","url":"","frequency":"event","unit":"companies"},
+    "term_premium": {"value":null,"asof":null,"source":"NY Fed ACM model (manual update)","url":"https://www.newyorkfed.org/research/data_indicators/term-premia-tabs","frequency":"daily","unit":"%"}
+  },
+  "history": [
+    {"date":"2026-10-27","weights":[10,30,20,15,15,10],"tag":"初始研究先验，并非历史统计模型结果"}
+  ]
+}
