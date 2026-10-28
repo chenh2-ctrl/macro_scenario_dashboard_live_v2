@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T21:22:40Z",
+  "generated_at": "2026-10-28T16:07:53Z",
   "mode": "fred_synced_plus_manual_ism_capex",
   "notes": "Initial researched snapshot for 2026-10-27. Update from FRED to replace market indicators. Monthly qualitative indicators require release checks.",
   "metrics": {
@@ -52,8 +52,8 @@
       "unit": "%"
     },
     "hy": {
-      "value": 330.0,
-      "asof": "2026-10-26",
+      "value": 318.0,
+      "asof": "2026-10-27",
       "source": "FRED / BAMLH0A0HYM2",
       "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "frequency": "daily",
