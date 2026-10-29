@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T21:09:05Z",
+  "generated_at": "2026-10-29T14:26:23Z",
   "mode": "fred_synced_plus_manual_ism_capex",
   "notes": "Initial researched snapshot for 2026-10-27. Update from FRED to replace market indicators. Monthly qualitative indicators require release checks.",
   "metrics": {
@@ -60,16 +60,16 @@
       "unit": "bp"
     },
     "corepce": {
-      "value": 3.008,
-      "asof": "2026-08-01",
+      "value": 3.121,
+      "asof": "2026-09-01",
       "source": "FRED / PCEPILFE",
       "url": "https://fred.stlouisfed.org/series/PCEPILFE",
       "frequency": "monthly",
       "unit": "% YoY"
     },
     "corepce3m": {
-      "value": 2.046,
-      "asof": "2026-08-01",
+      "value": 2.903,
+      "asof": "2026-09-01",
       "source": "FRED / PCEPILFE",
       "url": "https://fred.stlouisfed.org/series/PCEPILFE",
       "frequency": "monthly",
