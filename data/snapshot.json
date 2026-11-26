@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-11-25T15:43:01Z",
+  "generated_at": "2026-11-26T00:28:11Z",
   "mode": "fred_synced_plus_manual_ism_capex",
   "notes": "Initial researched snapshot for 2026-10-27. Update from FRED to replace market indicators. Monthly qualitative indicators require release checks.",
   "metrics": {
     "brent": {
-      "value": 92.94,
-      "asof": "2026-11-17",
+      "value": 91.8,
+      "asof": "2026-11-24",
       "source": "FRED / DCOILBRENTEU",
       "url": "https://fred.stlouisfed.org/series/DCOILBRENTEU",
       "frequency": "daily",
@@ -13,23 +13,23 @@
     },
     "dgs2": {
       "value": 4.63,
-      "asof": "2026-11-23",
+      "asof": "2026-11-24",
       "source": "FRED / DGS2",
       "url": "https://fred.stlouisfed.org/series/DGS2",
       "frequency": "daily",
       "unit": "%"
     },
     "dgs10": {
-      "value": 4.92,
-      "asof": "2026-11-23",
+      "value": 4.91,
+      "asof": "2026-11-24",
       "source": "FRED / DGS10",
       "url": "https://fred.stlouisfed.org/series/DGS10",
       "frequency": "daily",
       "unit": "%"
     },
     "dgs30": {
-      "value": 5.29,
-      "asof": "2026-11-23",
+      "value": 5.3,
+      "asof": "2026-11-24",
       "source": "FRED / DGS30",
       "url": "https://fred.stlouisfed.org/series/DGS30",
       "frequency": "daily",
@@ -37,7 +37,7 @@
     },
     "tips10": {
       "value": 2.79,
-      "asof": "2026-11-23",
+      "asof": "2026-11-24",
       "source": "FRED / DFII10",
       "url": "https://fred.stlouisfed.org/series/DFII10",
       "frequency": "daily",
@@ -45,7 +45,7 @@
     },
     "breakeven10": {
       "value": 2.12,
-      "asof": "2026-11-24",
+      "asof": "2026-11-25",
       "source": "FRED / T10YIE",
       "url": "https://fred.stlouisfed.org/series/T10YIE",
       "frequency": "daily",
